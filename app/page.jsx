@@ -29,7 +29,7 @@ export default function Home() {
             </p>
             <Button>Create Quiz</Button>
           </div>
-          <Image src='/images/hero.jpg' width={300} height={300} alt="Cartoon reading book" />
+          <Image src='/Images/hero.jpg' width={300} height={300} alt="Cartoon reading book" />
         </section>
       </div>
       <section className={styles.steps}>
