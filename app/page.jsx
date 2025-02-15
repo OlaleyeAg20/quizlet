@@ -1,23 +1,12 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { Logo } from "@/components/Logo";
 import { Button } from "@/components/Button";
 import { Guage, Numbers, Topic } from "@/components/Icon";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <header className={styles.header}>
-        <Logo />
-        <nav>
-          <ul>
-            <li><a href="#">How To</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-        <Button>Create Quiz</Button>
-      </header>
       <div className={styles.heroContainer}>
         <section className={styles.hero}>
           <div>
@@ -27,7 +16,14 @@ export default function Home() {
               tailored to each student’s learning needs. Engage, assess, 
               and improve with AI-driven quizzes!
             </p>
-            <Button>Create Quiz</Button>
+            <div className={styles.heroButtons}>
+              <Link href="/register" className={styles.heroButton}>
+                <Button>Register</Button>
+              </Link>
+              <Link href="/login">
+                <Button>Login</Button>
+              </Link>
+            </div>
           </div>
           <Image src='/Images/hero.jpg' width={300} height={300} alt="Cartoon reading book" />
         </section>

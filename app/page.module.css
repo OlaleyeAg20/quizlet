@@ -32,6 +32,10 @@
   /* flex-wrap: wrap; */
 }
 
+.hero a {
+  display: flex;
+}
+
 .hero > div{
   display: flex;
   flex-direction: column;
@@ -54,6 +58,17 @@
   color: var(--foreground);
   transform: translateY(-10px);
   line-height: 150%;
+}
+
+.heroButtons{
+  display: flex;
+  gap: 1rem;
+}
+
+.heroButton > button{
+  background: none;
+  color: #00bf6f!important;
+  border: #00bf6f 2px solid;
 }
 
 .steps{
