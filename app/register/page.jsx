@@ -90,7 +90,7 @@ const page = () => {
             required
           />
         </label>
-        <Button>Login</Button>
+        <Button>Register</Button>
         <p>
           Already have an account?{" "}
           <Link href="/login" style={{ color: "blue" }}>

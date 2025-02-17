@@ -10,6 +10,7 @@
     align-items: center;
     gap: .5rem;
     flex-wrap: wrap;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .user{
@@ -23,4 +24,38 @@
 .label{
     font-weight: 600;
     letter-spacing: 1px;
+}
+
+.quizNav ul{
+    display: flex;
+    width: 100%;
+    max-width: 350px;
+    align-items: stretch;
+    justify-content: stretch;
+    margin: 1.5rem auto;
+    list-style: none;
+    background: red;
+}
+
+.quizNav ul li{
+    padding: .5rem 1rem;
+    background: #e0e0e0;
+    width: calc(100% / 3);
+    font-size: 12px;
+    text-align: center;
+}
+
+.quizNav ul li a{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+.quizNav ul li:hover{
+    background: #f1f1f1;
+}
+
+.active{
+    background: #333!important;
+    color: #f1f1f1;
 }
