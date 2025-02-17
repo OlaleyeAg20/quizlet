@@ -1,11 +1,40 @@
+'use client'
 import Image from "next/image";
 import styles from "./page.module.css";
 import { Button } from "@/components/Button";
 import { Guage, Numbers, Topic } from "@/components/Icon";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  return (
+  const [loading, setLoading] = useState(true)
+  let token;
+
+  if (typeof window !== "undefined" && window.localStorage){
+    token = localStorage.getItem("token")
+  }
+
+  useEffect(() => {
+    if(token){
+      fetch('https://quiz-rvml.onrender.com/api/v1/login/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: "Token " + token
+        },
+      })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data)
+          window.location = '/quiz'
+        })
+        .catch(error => alert('an error occured: ', error))
+    }else{
+      setLoading(false)
+    }
+  }, [])
+
+  return loading ? <h1>Loading...</h1> : (
     <div className={styles.page}>
       <div className={styles.heroContainer}>
         <section className={styles.hero}>
@@ -25,7 +54,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <Image src='/Images/hero.jpg' width={300} height={300} alt="Cartoon reading book" />
+          <Image src='/Images/hero.jpg' width={300} height={300} alt="Cartoon reading book" priority />
         </section>
       </div>
       <section className={styles.steps}>
